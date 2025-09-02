@@ -6,32 +6,6 @@
 <body>
   Hello World
   <script type="module" src="lazy.js"></script>
-  
-  <!-- Hot Reload Client Script -->
-  <script>
-    (function() {
-      const ws = new WebSocket(`ws://${window.location.host}`);
-      
-      ws.onopen = function() {
-        console.log('🔌 Connected to hot reload server');
-      };
-      
-      ws.onmessage = function(event) {
-        const data = JSON.parse(event.data);
-        if (data.type === 'reload') {
-          console.log('🔄 Hot reload triggered, refreshing page...');
-          window.location.reload();
-        }
-      };
-      
-      ws.onclose = function() {
-        console.log('🔌 Disconnected from hot reload server');
-      };
-      
-      ws.onerror = function(error) {
-        console.error('WebSocket error:', error);
-      };
-    })();
   </script>
 </body>
 </html>

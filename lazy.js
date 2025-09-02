@@ -1,8 +1,9 @@
-
-import("./heavy.js")
-
 alert("importing lazy.js")
 
-document.body.textContent = ''
-document.write("this was written by js...")
+const button = document.createElement('button');
+button.textContent = 'Click me';
+document.body.appendChild(button);
 
+button.addEventListener('click', async () => {
+    import('./heavy.js');
+});
