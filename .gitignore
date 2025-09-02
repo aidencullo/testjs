@@ -1,0 +1,8 @@
+# Ignore backup files ending with ~
+*~
+
+# Common backup patterns
+*.bak
+*.backup
+*.tmp
+*.temp
